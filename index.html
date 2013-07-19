@@ -10,6 +10,7 @@
     <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fjquery.js"></script>
     <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap.js"></script>
     <link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Bowlby+One:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700,800" 
           rel="stylesheet" type="text/css">    
     <style type="text/css">
@@ -92,6 +93,84 @@
 	    .footer a {
 	    	color: #ccccff;
 	    }
+	    
+	    .beerbutton{
+	    	font-family: 'Bowlby One', cursive;
+			font-size:50px;
+
+			/* A semi-transparent text shadow */
+			text-shadow:1px 1px 0 rgba(255,255,255,0.4);
+
+			/* Overriding the default underline styling of the links */
+			text-decoration:none !important;
+			white-space:nowrap;
+
+			display:inline-block;
+			vertical-align:baseline;
+			position:relative;
+			cursor:pointer;
+			padding:100px 30px;
+
+			background-repeat:no-repeat;
+
+			/* The following two rules are fallbacks, in case
+			   the browser does not support multiple backgrounds. */
+
+			background-position:bottom left;
+			background-image:url('http://www.kmusic.ca/button_bg.png');
+
+			color:#693e0a !important;
+			border:1px solid #bea280 !important;	
+			background-color: #e38d27;
+	
+			background-image:url('http://www.kmusic.ca/button_bg.png'), url('http://www.kmusic.ca/button_bg.png'), -moz-radial-gradient(center bottom, circle, rgba(232,189,45,1) 0,rgba(232,189,45,0) 100px),-moz-linear-gradient(#f1982f, #d4821f);
+			background-image:url('http://www.kmusic.ca/button_bg.png'), url('http://www.kmusic.ca/button_bg.png'), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(232,189,45,1)), to(rgba(232,189,45,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#f1982f), to(#d4821f));
+
+			/* CSS3 background positioning property with multiple values. The background
+			   images themselves are defined in the individual color classes */
+
+			background-position:bottom left, top right, 0 0, 0 0;
+			background-clip:border-box;
+
+			/* Applying a default border radius of 8px */
+
+			-moz-border-radius:8px;
+			-webkit-border-radius:8px;
+			border-radius:8px;
+
+			/* A 1px highlight inside of the button */
+
+			-moz-box-shadow:0 0 1px #fff inset;
+			-webkit-box-shadow:0 0 1px #fff inset;
+			box-shadow:0 0 1px #fff inset;
+
+			/* Animating the background positions with CSS3 */
+			/* Currently works only in Safari/Chrome */
+
+			-webkit-transition:background-position 1s;
+			-moz-transition:background-position 1s;
+			-o-transition:background-position 1s;
+			transition:background-position 1s;
+}
+
+		.beerbutton:hover{
+
+			/* The first rule is a fallback, in case the browser
+			   does not support multiple backgrounds
+			*/
+
+			background-position:top left;
+			background-position:top left, bottom right, 0 0, 0 0;
+			
+			background-color:#ec9732;
+	
+			background-image:url('http://www.kmusic.ca/button_bg.png'), url('http://www.kmusic.ca/button_bg.png'), -moz-radial-gradient(center bottom, circle, rgba(241,192,52,1) 0,rgba(241,192,52,0) 100px),-moz-linear-gradient(#f9a746, #e18f2b);
+			background-image:url('http://www.kmusic.ca/button_bg.png'), url('http://www.kmusic.ca/button_bg.png'), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(241,192,52,1)), to(rgba(241,192,52,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#f9a746), to(#e18f2b));
+		}
+		.beerbutton:active{
+			/* Moving the button 1px to the bottom when clicked */
+			bottom:-1px;
+		}
     </style>
   </head>
   <body>
@@ -127,17 +206,17 @@
       <!-- www.google.com/fonts/specimen/Ubuntu#pairings -->
       <div class="row -fluid heading">
         <div class="span12">
-          <h1>BEER ME</h1>
+          <a href="#" class="beerbutton">BEER ME</a>
         </div>
       </div> 
       <div class="row-fluid subheading">
         <div class="span12">
-          <p class="lead">Beer will come to you</p>
+          <p class="lead">Let the beer come to you!</p>
         </div>
       </div>
       <div class="row-fluid pitch">
         <div class="span5 offset1 video">
-        	<img class="img-polaroid" src="http://placehold.it/480x300">
+        	<img class="img-polaroid" src="http://www.kmusic.ca/manwithbeer.jpg">
         </div>
         
         <!-- We define a new 'actions' div to contain statistics, order, and share buttons. -->        
@@ -152,7 +231,7 @@
         			</div>
         			<div class="span4">
         				<div class="linediv-c">
-        					<h3>$0</h3> <p> of $100,000</p>
+        					<h3>$0</h3> <p> of $5,000</p>
         				</div>
         			</div>
         			<div class="span4">
@@ -187,29 +266,39 @@
       <!-- Marketing copy begins-->
       <div class="row-fluid section1">
         <div class="span5 offset1 asset">
-        	<img class="img-polaroid" src="http://placehold.it/480x300">
-        </div>
-        <div class="span5 copy">
         	<p>
-        		No more waiting in line at the bar or sitting idly at a table hoping that
-        		a waitress will eventually take your order. Just press the big "BEER ME" 
+        		Please help fund the creation of <i>BEER ME</i>. With this app there will
+        		be no more waiting in line at the bar or sitting idly at a table hoping that
+        		someone will eventually take your order. Just press the big "BEER ME" 
         		button on your smart phone and your beer will come to you instanter!
         	</p>
-        </div>
-      </div>
-      
-      <div class="row-fluid section2">
-        <div class="span5 offset1 copy copy-right">
+        	
         	<p>
-          		Donate $20 or more now and you will receive a T-Shirt sporting the text:
-          		<br><i>I gave you BEER ME<br>(gratuities accepted)</i>
+        		How will this work? If your local pub subscribes to <i>Beer Me</i>, they will be notified
+        		of your thirst instantly and will know where to find you via GPS and/or a QR code
+        		to be scanned at your table. If your local pub has not yet subscribed we will let you know
+        		that you're on your own for now. But never fear, we'll send a message to the pub urging them to
+        		subscribe so that you can use <i>Beer Me</i> the next time. The more you use it, the more likely
+        		they will  subscribe.
+        	</p>
+        </div>
+
+        <div class="span5 copy">
+        	<p>
+          		Donate $20 and you will receive a pin sporting the text:
+          	</p>
+          	<p style="text-align:center">
+          		<i>I gave you BEER ME<br>(gratuity accepted)</i>
+          	</p>
+          	<p>
+          		As people start tipping you for the convenience of <i>Beer Me</i>, 
+          		your investment may very well pay you back in
+          		spades! (There is of course no guarantee that anyone will tip you, but
+          		here's hoping) 
           	</p>
         </div>
-        <div class="span5 asset">
-        	<img class="img-polaroid" src="http://placehold.it/480x300">
-        </div>
       </div>
-      
+    
       <!-- FAQ with JS using the accordion. -->
       <!-- jquery.js and bootstrap.js dependencies -->
       <!-- http://twitter.github.io/bootstrap/javascript.html#collapse -->
@@ -221,12 +310,12 @@
           		<div class="accordion-heading">
           			<a class="accordion-toggle" data-toggle="collapse"
           				data-parent="#accordion2" href="#collapseOne">
-          				How does it work?
+          				How will it work?
           			</a>
           		</div>
           		<div id="collapseOne" class="accordion-body collapse">
           			<div class="accordion-inner">
-          				1. Download BEER ME.<br />
+          				1. Download <i>Beer Me</i> for free.<br />
           				2. Go to your favourite pub/bar/club <br />
           				3. Press the big "BEER ME" button<br />
           				4. Receive your beer
