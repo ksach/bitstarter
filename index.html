@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <title>Beerstarter</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-combined.no-icons.min.css">
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css">
-    <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fsocial-buttons.css">    
-    <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fjquery.js"></script>
-    <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap.js"></script>
-    <link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Bowlby+One:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700,800" 
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="//kmusic.ca/beerme/social-buttons.css">    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Bowlby+One:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700,800" 
           rel="stylesheet" type="text/css">    
     <style type="text/css">
     	/* Large desktop */
@@ -134,9 +134,9 @@
 
 			/* Applying a default border radius of 8px */
 
-			-moz-border-radius:8px;
-			-webkit-border-radius:8px;
-			border-radius:8px;
+			-moz-border-radius:28px;
+			-webkit-border-radius:28px;
+			border-radius:28px;
 
 			/* A 1px highlight inside of the button */
 
@@ -171,6 +171,25 @@
 			/* Moving the button 1px to the bottom when clicked */
 			bottom:-1px;
 		}
+		
+		/*Video style*/
+      .flex-video {
+        position: relative;
+        padding-top: 25px;
+        padding-bottom: 67.5%;
+        height: 0;
+        margin-bottom: 16px;
+        overflow: hidden;
+      }
+      .flex-video.widescreen { padding-bottom: 57.25%; }
+      .flex-video iframe, .flex-video object, .flex-video embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+		
 		
 		/* http://support.addthis.com/customer/portal/questions/1136093-share-buttons-in-center-position */      
 		 div.addthis_toolbox {
@@ -236,7 +255,9 @@
       </div>
       <div class="row-fluid pitch">
         <div class="span5 offset1 video">
-        	<img class="img-polaroid" alt="a happy customer" src="http://www.kmusic.ca/manwithbeer.jpg">
+        	<div class="flex-video widescreen">
+        		<iframe src="http://www.youtube.com/embed/zHWUCprfEMs" frameborder="0" allowfullscreen></iframe>
+         	</div>
         </div>
         
         <!-- We define a new 'actions' div to contain statistics, order, and share buttons. -->        
@@ -297,6 +318,7 @@
       
       <!-- Marketing copy begins-->
       <div class="row-fluid section1">
+      <a name="about"></a> 
         <div class="span5 offset1 asset">
         	<p>
         		Please help fund the creation of <i>Beer Me</i>. With this app there will
@@ -368,14 +390,14 @@
           		<div class="accordion-heading">
           			<a class="accordion-toggle" data-toggle="collapse"
           				data-parent="#accordion3" href="#collapseThree">
-          				What if my local pub does not describe to <I>Beer Me</i>?
+          				What if my local pub does not subscribe to <I>Beer Me</i>?
           			</a>
           		</div>
           		<div id="collapseThree" class="accordion-body collapse">
           			<div class="accordion-inner">
 						If you press the big "BEER ME" button but your local pub has not yet subscribed, we will let you know
 						that you're on your own for now. But never fear, we'll send a message to the pub urging them to
-						subscribe so that you can use <i>Beer Me</i> the next time. The more you use it, the more likely
+						subscribe for free so that you can use <i>Beer Me</i> the next time. The more you use it, the more likely
 						they will  subscribe.
           			</div>
           		</div>
@@ -384,7 +406,32 @@
         </div>
         
     </div>
-        
+    
+    <div class="row-fluid contact">
+    	<div class="span10 offset1">
+	    	<a name="contact"></a> 
+	    	For more information about <i>Beer Me</i> please contact us at 
+	    	<a
+      target="_blank"
+      id="contact"
+      href="http://www.google.com/recaptcha/mailhide/d?k=01RgRLgvxEUrUhAUtFCSPNRA==&amp;c=0nIRqiLvmUU-5ifT56SvMSY2hB9qsGA9T0u6dIWkHPI=">
+        in<span style="display:none">obfuscation</span>fo@beer<span style="display:none">obfuscation</span>-me.co
+    </a>
+ 
+    <script type="text/javascript">
+      $(document).ready(function(){
+ 
+        //First, remove the invisible <span>s from the link - now the plain-text e-mail address is in the DOM
+        $("#contact span").remove();
+ 
+        //Next, set the link's href attribute to be 'mailto:' plus the link text (the plain-text e-mail address from the previous step.)
+        //BAM--instant simple mailto: link, except spam bots can't harvest it.
+        $("#contact").attr("href", "mailto:" + $.trim($("#contact").text()));
+ 
+      });
+    </script>
+        </div>
+    </div>
       <div class="row-fluid footer">
         <div class="span12">
         	<p>This work is licensed under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC By-SA 3.0</a>, without all the cruft that would otherwise be put at the bottom of the page.</p>
