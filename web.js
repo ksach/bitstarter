@@ -18,11 +18,6 @@ app.get('/', function(request, response) {
   response.send(data);
 });
 
-<<<<<<< HEAD
-var port = process.env.PORT || 8080;
-app.listen(port, function() {
-  console.log("Listening on " + port);
-=======
 // Render example.com/orders
 app.get('/orders', function(request, response) {
   global.db.Order.findAll().success(function(orders) {
@@ -36,7 +31,6 @@ app.get('/orders', function(request, response) {
     console.log(err);
     response.send("error retrieving orders");
   });
->>>>>>> staging
 });
 
 // Hit this URL while on example.com/orders to refresh
