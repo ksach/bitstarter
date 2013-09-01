@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Beerstarter</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="//kmusic.ca/beerme/social-buttons.css">    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Bowlby+One:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700,800" 
+          rel="stylesheet" type="text/css">    
+    <style type="text/css">
+    	/* Large desktop */
+    	@media (min-width: 980px) {
+        	body {
+        		padding-top: 60px;
+        	}
+        	.linediv-l {
+        		border-right: 1px white solid;
+        	}
+        	.linediv-r {
+        		border-left: 1px white solid;
+        	}
+    	}
+    	
+    	/* Landscape phones and down */
+    	@media (max-width: 480px) {
+    		.copy {
+    			padding: 2.5% 10%;
+    		}
+    		.linediv-l {
+        		border-bottom: 1px white solid;
+        	}
+        	.linediv-r {
+        		border-top: 1px white solid;
+        	}
+    	}
+    	
+    	/* All form factors */
+    	
+    	/* Main body and headings */
+    	body{
+    		font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    	}
+    	.heading, .subheading {
+    		font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+    		text-align: center;
+    	}
+    	p.lead {
+    		padding-top: 1.5%;
+    		font-size: 24px;
+    		line-height: 30px;
+    	}
+    	p {
+	    	font-size: 18px;
+	    	line-height: 24px;
+	    }
+	    
+	    /* Video pitch and Action */
+	    .pitch {
+	    	padding: 2.5% 0%;
+	    }
+	    .order {
+	    	padding: 2% 0%;
+	    }
+	    .actions {
+	    	background-color: #343434;
+	    	padding: 3% 0%;
+	    }
+	    .video, .thermometer, .order, .social, .statistics {
+	    	text-align: center;
+	    }
+	    .statistics h3, .statistics p {
+	    	color: white;
+	    }
+	    
+	    /* Marketing Copy and Footer */
+	    .copy {
+	    	padding-top: 2.5%;
+	    	padding-bottom: 2.5%;
+	    	text-align: justify;
+	    }
+	    .asset {
+	    	padding: 2.5% 0%;
+	    }
+	    .footer p {
+	    	font-size: 11px;
+	    }
+	    .footer a {
+	    	color: #ccccff;
+	    }
+	    
+	    .beerbutton{
+	    	font-family: 'Bowlby One', cursive;
+			font-size:50px;
+
+			/* A semi-transparent text shadow */
+			text-shadow:1px 1px 0 rgba(255,255,255,0.4);
+
+			/* Overriding the default underline styling of the links */
+			text-decoration:none !important;
+			white-space:nowrap;
+
+			display:inline-block;
+			vertical-align:baseline;
+			position:relative;
+			cursor:pointer;
+			padding:100px 30px;
+
+			background-repeat:no-repeat;
+
+			/* The following two rules are fallbacks, in case
+			   the browser does not support multiple backgrounds. */
+
+			background-position:bottom left;
+			background-image:url('http://www.kmusic.ca/button_bg.png');
+
+			color:#693e0a !important;
+			border:1px solid #bea280 !important;	
+			background-color: #e38d27;
+	
+			background-image:url('http://www.kmusic.ca/button_bg.png'), url('http://www.kmusic.ca/button_bg.png'), -moz-radial-gradient(center bottom, circle, rgba(232,189,45,1) 0,rgba(232,189,45,0) 100px),-moz-linear-gradient(#f1982f, #d4821f);
+			background-image:url('http://www.kmusic.ca/button_bg.png'), url('http://www.kmusic.ca/button_bg.png'), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(232,189,45,1)), to(rgba(232,189,45,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#f1982f), to(#d4821f));
+
+			/* CSS3 background positioning property with multiple values. The background
+			   images themselves are defined in the individual color classes */
+
+			background-position:bottom left, top right, 0 0, 0 0;
+			background-clip:border-box;
+
+			/* Applying a default border radius of 8px */
+
+			-moz-border-radius:28px;
+			-webkit-border-radius:28px;
+			border-radius:28px;
+
+			/* A 1px highlight inside of the button */
+
+			-moz-box-shadow:0 0 1px #fff inset;
+			-webkit-box-shadow:0 0 1px #fff inset;
+			box-shadow:0 0 1px #fff inset;
+
+			/* Animating the background positions with CSS3 */
+			/* Currently works only in Safari/Chrome */
+
+			-webkit-transition:background-position 1s;
+			-moz-transition:background-position 1s;
+			-o-transition:background-position 1s;
+			transition:background-position 1s;
+}
+
+		.beerbutton:hover{
+
+			/* The first rule is a fallback, in case the browser
+			   does not support multiple backgrounds
+			*/
+
+			background-position:top left;
+			background-position:top left, bottom right, 0 0, 0 0;
+			
+			background-color:#ec9732;
+	
+			background-image:url('http://www.kmusic.ca/button_bg.png'), url('http://www.kmusic.ca/button_bg.png'), -moz-radial-gradient(center bottom, circle, rgba(241,192,52,1) 0,rgba(241,192,52,0) 100px),-moz-linear-gradient(#f9a746, #e18f2b);
+			background-image:url('http://www.kmusic.ca/button_bg.png'), url('http://www.kmusic.ca/button_bg.png'), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(241,192,52,1)), to(rgba(241,192,52,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#f9a746), to(#e18f2b));
+		}
+		.beerbutton:active{
+			/* Moving the button 1px to the bottom when clicked */
+			bottom:-1px;
+		}
+		
+		/*Video style*/
+      .flex-video {
+        position: relative;
+        padding-top: 25px;
+        padding-bottom: 67.5%;
+        height: 0;
+        margin-bottom: 16px;
+        overflow: hidden;
+      }
+      .flex-video.widescreen { padding-bottom: 57.25%; }
+      .flex-video iframe, .flex-video object, .flex-video embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+		
+		
+		/* http://support.addthis.com/customer/portal/questions/1136093-share-buttons-in-center-position */      
+		 div.addthis_toolbox {
+		  width:180px;
+		  margin: 0 auto;
+		 }
+    </style>
+    
+    <script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-43064169-1']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script>
+  </head>
+  <body>
+  
+  	<!-- Mobile-friendly navbar adapted from example. -->
+  	<!-- http://twitter.github.io/bootstrap/examples/starter-template.html -->
+  	<div class="navbar navbar-inverse navbar-fixed-top">
+  		<div class="navbar-inner">
+  			<div class="container">
+  				<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+  					<span class="icon-bar"></span>
+  					<span class="icon-bar"></span>
+  					<span class="icon-bar"></span>
+  				</button>
+  				<a class="brand" href="#">BeerStarter</a>
+  				<div class="nav-collapse collapse">
+  					<ul class="nav">
+  						<li class="active"><a href="#">Home</a></li>
+  						<li><a href="#about">About</a></li>
+  						<li><a href="#contact">Contact</a></li>
+  					</ul>
+  				</div><!--/.nav-collapse -->
+  			</div>
+  		</div>
+  	</div>
+  
+  	<!-- We use row-fluid inside containers to achieve a resizable layout. -->
+  	<!-- blogs.endjin.com/2013/04/tips-for-implementing-responsive-designs-using-bootstrap/ -->
+    <!-- http://stackoverflow.com/a/12270322 -->
+    <div class="container">
+    	<!-- Font and paired font of .heading/.subheading and body from Google Fonts -->
+      <!-- www.google.com/fonts/specimen/Ubuntu -->
+      <!-- www.google.com/fonts/specimen/Ubuntu#pairings -->
+      <div class="row -fluid heading">
+        <div class="span12">
+          <a href="#" class="beerbutton">BEER ME</a>
+        </div>
+      </div> 
+      <div class="row-fluid subheading">
+        <div class="span12">
+          <p class="lead">Let the beer come to you!</p>
+        </div>
+      </div>
+      <div class="row-fluid pitch">
+        <div class="span5 offset1 video">
+        	<div class="flex-video widescreen">
+        		<iframe src="http://www.youtube.com/embed/zHWUCprfEMs" frameborder="0" allowfullscreen></iframe>
+         	</div>
+        </div>
+        
+        <!-- We define a new 'actions' div to contain statistics, order, and share buttons. -->        
+        <div class="span5 actions">
+        	<div class="row-fluid">
+        	<div class="span8 offset2">
+        		<div class="row-fluid statistics">
+        		
+        			<% var backers = 0; var bc_sum = 0; %>
+						<% for(var i=0; i<orders.length; i++) {%>
+						  <% backers = backers + 1 %>
+						  <% bc_sum = bc_sum + orders[i].amount %>
+						<% } %>
+        		
+        			<div class="span4">
+	        			<!-- linediv-l and linediv-r are dividing lines -->
+    	    			<div class="linediv-l">
+        					<h3><%= backers %></h3> <p>backers</p>
+        				</div>
+        			</div>
+        			<div class="span4">
+        				<div class="linediv-c">
+        					<h3><%= bc_sum %>BTC</h3> <p> of 100BTC</p>
+        				</div>
+        			</div>
+        			<div class="span4">
+        				<div class="linediv-r">
+        					<h3 id="countdown">20</h3> <p>days left</p>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+        	</div>
+        	<div class="row-fluid">
+        	<div class="span10 offset1">
+        	<!-- Bootstrap progress bar -->
+        	<!-- http://twitter.github.io/bootstrap/components.html#progress -->
+        		<div class="thermometer progress active">
+            		<div class="bar bar-success" style="width: <%= bc_sum  %>%;"></div>
+            		<div class="bar bar-warning" style="width: <%= 100-bc_sum %>%;"></div>
+            	</div>
+          	</div>
+          	</div>
+          	<div class="row-fluid">
+          	<div class="span6 offset3 order">
+          		<a class="coinbase-button" data-code="fc514fa1c31ef541a8c10526b7b34776" data-button-style="donation_large" href="https://coinbase.com/checkouts/fc514fa1c31ef541a8c10526b7b34776">Donate 0.25 Bitcoins</a><script src="https://coinbase.com/assets/button.js" type="text/javascript"></script>
+          	</div>
+          	</div>
+          	<div class="row-fluid">
+          	<div class="span8 offset2 social">
+            	<!-- AddThis Button BEGIN -->
+				<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+				<a class="addthis_button_preferred_1"></a>
+				<a class="addthis_button_preferred_2"></a>
+				<a class="addthis_button_compact"></a>
+				<a class="addthis_counter addthis_bubble_style"></a>
+				</div>
+				<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+				<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5205112a3ad6bd6f"></script>
+				<!-- AddThis Button END -->	
+          </div>
+          	</div>
+        </div>
+    </div>
+      
+      <!-- Marketing copy begins-->
+      <div class="row-fluid section1">
+      <a name="about"></a> 
+        <div class="span5 offset1 asset">
+        	<p>
+        		Please help fund the creation of <i>Beer Me</i>. With this app there will
+        		be no more waiting in line at the bar or sitting idly at a table hoping that
+        		someone will eventually take your order. Just press the big "BEER ME" 
+        		button on your smart phone and your beer will come to you instantly!
+        	</p>
+        </div>
+
+        <div class="span5 copy">
+        	<p>
+          		Donate 0.25 bitcoins and you will receive a pin sporting the text:
+          	</p>
+          	<p style="text-align:center">
+          		<i>I gave you BEER ME<br>(gratuity accepted)</i>
+          	</p>
+          	<p>
+          		As people start tipping you for the convenience of <i>Beer Me</i>, 
+          		your investment may very well pay you back in
+          		spades! (There is of course no guarantee that anyone will tip you, but
+          		here's hoping) 
+          	</p>
+        </div>
+      </div>
+    
+      <!-- FAQ with JS using the accordion. -->
+      <!-- jquery.js and bootstrap.js dependencies -->
+      <!-- http://twitter.github.io/bootstrap/javascript.html#collapse -->
+      <div class="row-fluid faq">
+        <div class="span10 offset1">
+          <h3>FAQ</h3>
+          <div class="accordion" id="accordion1">
+          	<div class="accordion-group">
+          		<div class="accordion-heading">
+          			<a class="accordion-toggle" data-toggle="collapse"
+          				data-parent="#accordion1" href="#collapseOne">
+          				How will it work?
+          			</a>
+          		</div>
+          		<div id="collapseOne" class="accordion-body collapse">
+          			<div class="accordion-inner">
+          				1. Download <i>Beer Me</i> for free.<br />
+          				2. Go to your favourite pub/bar/club <br />
+          				3. Press the big "BEER ME" button<br />
+          				4. Receive your beer
+          			</div>
+          		</div>
+          	</div>
+          </div>
+          <div class="accordion" id="accordion2">
+          	<div class="accordion-group">
+          		<div class="accordion-heading">
+          			<a class="accordion-toggle" data-toggle="collapse"
+          				data-parent="#accordion2" href="#collapseTwo">
+          				But really, how will it work?
+          			</a>
+          		</div>
+          		<div id="collapseTwo" class="accordion-body collapse">
+          			<div class="accordion-inner">
+						When you press the big "BEER ME" button, the bartender in the pub you're in will be notified
+						of your thirst instantly and will know where to find you via GPS and/or a QR code
+						to be scanned at your table.  Being eager to please, they will bring you your beer without delay. 
+          			</div>
+          		</div>
+          	</div>
+          </div>
+          <div class="accordion" id="accordion3">
+          	<div class="accordion-group">
+          		<div class="accordion-heading">
+          			<a class="accordion-toggle" data-toggle="collapse"
+          				data-parent="#accordion3" href="#collapseThree">
+          				What if my local pub does not subscribe to <I>Beer Me</i>?
+          			</a>
+          		</div>
+          		<div id="collapseThree" class="accordion-body collapse">
+          			<div class="accordion-inner">
+						If you press the big "BEER ME" button but your local pub has not yet subscribed, we will let you know
+						that you're on your own for now. But never fear, we'll send a message to the pub urging them to
+						subscribe for free so that you can use <i>Beer Me</i> the next time. The more you use it, the more likely
+						they will  subscribe.
+          			</div>
+          		</div>
+          	</div>
+          </div>
+        </div>
+        
+    </div>
+    
+    <div class="row-fluid contact">
+    	<div class="span10 offset1">
+	    	<a name="contact"></a> 
+	    	For more information about <i>Beer Me</i> please contact us at 
+	    	<a
+      target="_blank"
+      id="contact"
+      href="http://www.google.com/recaptcha/mailhide/d?k=01RgRLgvxEUrUhAUtFCSPNRA==&amp;c=0nIRqiLvmUU-5ifT56SvMSY2hB9qsGA9T0u6dIWkHPI=">
+        in<span style="display:none">obfuscation</span>fo@beer<span style="display:none">obfuscation</span>-me.co
+    </a>
+ 
+    <script type="text/javascript">
+      $(document).ready(function(){
+ 
+        //First, remove the invisible <span>s from the link - now the plain-text e-mail address is in the DOM
+        $("#contact span").remove();
+ 
+        //Next, set the link's href attribute to be 'mailto:' plus the link text (the plain-text e-mail address from the previous step.)
+        //BAM--instant simple mailto: link, except spam bots can't harvest it.
+        $("#contact").attr("href", "mailto:" + $.trim($("#contact").text()));
+ 
+      });
+    </script>
+        </div>
+    </div>
+      <div class="row-fluid footer">
+        <div class="span12">
+        	<p>This work is licensed under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC By-SA 3.0</a>, without all the cruft that would otherwise be put at the bottom of the page.</p>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+  jQuery(document).ready(function($) {
+      today = new Date();
+
+      BigDay = new Date("September 09, 2013");
+      msPerDay = 24 * 60 * 60 * 1000 ;
+      timeLeft = (BigDay.getTime() - today.getTime());
+      e_daysLeft = timeLeft / msPerDay;
+      daysLeft = Math.floor(e_daysLeft);
+
+      $("#countdown").text(daysLeft);
+  });
+</script>
+    <script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-43064169-1', 'herokuapp.com');
+	  ga('send', 'pageview');
+
+	</script>
+  </body>
+  
+</html>
